@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="advertboard" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="advertboard"
+       version="1.1">
+
+    <object class="Advert" table="advertboard" extends="xPDOSimpleObject">
+		<field key="created" dbtype="int" precision="10" phptype="integer" null="false" />
+		<field key="updated" dbtype="int" precision="10" phptype="integer" null="true" />
+		<field key="user_id" dbtype="int" precision="10" phptype="integer" null="false" />
+		<field key="status" dbtype="int" precision="1" phptype="integer" null="false" default="0" />
+		<field key="pid" dbtype="int" precision="10" phptype="integer" null="false" />
+		<field key="title" dbtype="varchar" precision="191" phptype="string" null="true" index="index" />
+		<field key="content" dbtype="mediumtext" phptype="string" null="true" index="index" />
+		<field key="price" dbtype="float" phptype="float" null="false" default="0" />
+		<field key="old_price" dbtype="float" phptype="float" null="false" default="0" />
+		<field key="images" dbtype="text" phptype="string" null="false" default=""/>
+		<field key="top" dbtype="int" precision="1" phptype="integer" null="false" default="0" />
+		<field key="hash" dbtype="varchar" precision="256" phptype="string" null="true" />
+		
+		<index alias="user_id_IDX" name="user_id_IDX" primary="false" unique="false" type="BTREE">
+			<column key="user_id" length="" collation="A" null="false" />
+		</index>
+		<index alias="advert_title_IDX" name="advert_title_IDX" primary="false" unique="false" type="FULLTEXT" >
+			<column key="title" length="" collation="" null="true" />
+		</index>
+		<index alias="advert_content_IDX" name="advert_content_IDX" primary="false" unique="false" type="FULLTEXT" >
+			<column key="content" length="" collation="" null="true" />
+		</index>
+		<index alias="pid_IDX" name="pid_IDX" primary="false" unique="false" type="BTREE">
+			<column key="pid" length="" collation="A" null="false" />
+		</index>
+    </object>
+</model>
