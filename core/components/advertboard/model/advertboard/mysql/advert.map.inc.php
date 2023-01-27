@@ -22,6 +22,7 @@ $xpdo_meta_map['Advert']= array (
     'images' => '',
     'top' => 0,
     'hash' => NULL,
+    'extended' => '',
   ),
   'fieldMeta' => 
   array (
@@ -111,6 +112,13 @@ $xpdo_meta_map['Advert']= array (
       'precision' => '256',
       'phptype' => 'string',
       'null' => true,
+    ),
+    'extended' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
     ),
   ),
   'indexes' => 

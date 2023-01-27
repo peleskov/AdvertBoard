@@ -11,14 +11,14 @@ if (!defined('MODX_CORE_PATH')) {
 return [
     'name' => 'AdvertBoard',
     'name_lower' => 'advertboard',
-    'version' => '1.1.5',
+    'version' => '2.0.0',
     'release' => 'pl',
     // Install package to site right after build
     'install' => true,
     // Which elements should be updated on package upgrade
     'update' => [
         'chunks' => true,
-        'menus' => false,
+        'menus' => true,
         'permission' => false,
         'plugins' => true,
         'policies' => false,

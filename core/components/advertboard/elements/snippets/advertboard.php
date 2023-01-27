@@ -62,7 +62,7 @@ switch ($action) {
             }
         }
         $q->where($where);
-        if(!empty($search)){
+        if (!empty($search)) {
             $q->where(array($search), xPDOQuery::SQL_OR);
         }
         $total = $modx->getCount('Advert', $q);
@@ -126,7 +126,13 @@ switch ($action) {
         foreach (['content', 'old_price'] as $field) { // не обязательные поля
             $params[$field] = strip_tags($_POST[$field]);
         }
-
+        if (isset($_POST['extended'])) {
+            if (is_array($_POST['extended'])) {
+                $params['extended'] = json_encode($_POST['extended'], true);
+            } else {
+                $params['extended'] = strip_tags($_POST['extended']);
+            }
+        }
         if ($user = $modx->getUser()) {
             $user_id = $user->id;
         } else {

@@ -15,6 +15,7 @@
 		<field key="images" dbtype="text" phptype="string" null="false" default=""/>
 		<field key="top" dbtype="int" precision="1" phptype="integer" null="false" default="0" />
 		<field key="hash" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="extended" dbtype="text" phptype="string" null="false" default=""/>
 		
 		<index alias="user_id_IDX" name="user_id_IDX" primary="false" unique="false" type="BTREE">
 			<column key="user_id" length="" collation="A" null="false" />
