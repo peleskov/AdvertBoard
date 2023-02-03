@@ -21,7 +21,7 @@ switch ($action) {
         $parents = $modx->getOption('parents', $scriptProperties, '');
         $depth = $modx->getOption('depth', $scriptProperties, 10);
         $hash = $modx->getOption('hash', $scriptProperties, '');
-        $where = json_decode($modx->getOption('where', $scriptProperties, '{}'), true);
+        $where = json_decode($where, true);
         $totalVar = $modx->getOption('totalVar', $scriptProperties, 'total');
         $limit = $modx->getOption('limit', $scriptProperties, 5);
         $offset = $modx->getOption('offset', $scriptProperties, 0);
