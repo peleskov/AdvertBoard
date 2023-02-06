@@ -25,6 +25,7 @@ class AdvertBoardImportIndexProcessor extends modObjectProcessor
                     5 => "Содержание"
                     6 => "Цена"
                     7 => "Путь до изображения"
+                    8 => "Автврака"
                     */
                     //Создаем пользователя и его профиль, если его еще нет
                     $username = $data[1];
