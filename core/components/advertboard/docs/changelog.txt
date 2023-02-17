@@ -1,5 +1,13 @@
 Changelog for AdvertBoard.
 
+2.0.3
+==============
+- fix adverdboard snippet
+
+2.0.2
+==============
+- fix where in advert/get in adverdboard snippet
+
 2.0.1
 ==============
 - fix where in advert/get in adverdboard snippet

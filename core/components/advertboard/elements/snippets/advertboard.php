@@ -21,7 +21,8 @@ switch ($action) {
         $parents = $modx->getOption('parents', $scriptProperties, '');
         $depth = $modx->getOption('depth', $scriptProperties, 10);
         $hash = $modx->getOption('hash', $scriptProperties, '');
-        $where = json_decode($where, true);
+        $where = $modx->getOption('where', $scriptProperties, []);
+        $query = $modx->getOption('query', $scriptProperties, '');
         $totalVar = $modx->getOption('totalVar', $scriptProperties, 'total');
         $limit = $modx->getOption('limit', $scriptProperties, 5);
         $offset = $modx->getOption('offset', $scriptProperties, 0);
@@ -70,7 +71,7 @@ switch ($action) {
         $q->sortby($sortby, $sortdir);
         $q->limit($limit, $offset);
         $q->prepare();
-        //return $q->toSQL();
+        //$modx->log(1, $q->toSQL());
         $adverts = $modx->getIterator('Advert', $q);
         $items = [];
         $idx = 0;
@@ -123,9 +124,9 @@ switch ($action) {
         if ($params['pid'] <= 0 || !$resource = $modx->getObject('modResource', array('id' => $params['pid']))) {
             $errors['pid'] = 'Укажите категорию!';
         }
-        foreach (['content', 'old_price'] as $field) { // не обязательные поля
-            $params[$field] = strip_tags($_POST[$field]);
-        }
+        $params['content'] = strip_tags($_POST[$field]);
+        $params['old_price'] = $_POST[$field]? strip_tags($_POST[$field]):0;
+        
         if (isset($_POST['extended'])) {
             if (is_array($_POST['extended'])) {
                 $params['extended'] = json_encode($_POST['extended'], true);
