@@ -124,8 +124,8 @@ switch ($action) {
         if ($params['pid'] <= 0 || !$resource = $modx->getObject('modResource', array('id' => $params['pid']))) {
             $errors['pid'] = 'Укажите категорию!';
         }
-        $params['content'] = strip_tags($_POST[$field]);
-        $params['old_price'] = $_POST[$field]? strip_tags($_POST[$field]):0;
+        $params['content'] = strip_tags($_POST['content']);
+        $params['old_price'] = $_POST[$field]? strip_tags($_POST['old_price']):0;
         
         if (isset($_POST['extended'])) {
             if (is_array($_POST['extended'])) {
