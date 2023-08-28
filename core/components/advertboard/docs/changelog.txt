@@ -1,5 +1,9 @@
 Changelog for AdvertBoard.
 
+2.0.5
+==============
+- fix adverdboard snippet
+
 2.0.4
 ==============
 - fix adverdboard snippet

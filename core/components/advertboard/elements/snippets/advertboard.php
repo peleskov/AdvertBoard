@@ -125,7 +125,7 @@ switch ($action) {
             $errors['pid'] = 'Укажите категорию!';
         }
         $params['content'] = strip_tags($_POST['content']);
-        $params['old_price'] = $_POST[$field]? strip_tags($_POST['old_price']):0;
+        $params['old_price'] = $_POST['old_price']? strip_tags($_POST['old_price']):0;
         
         if (isset($_POST['extended'])) {
             if (is_array($_POST['extended'])) {
